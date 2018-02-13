@@ -1,0 +1,26 @@
+<mat-card class="card-central">
+
+    <div>
+        <mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="operador">
+                <mat-header-cell *matHeaderCellDef> Atencion </mat-header-cell>
+                <mat-cell *matCellDef="let registro"> {{registro.operador}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ranking">
+                <mat-header-cell *matHeaderCellDef> Valoracion </mat-header-cell>
+                <mat-cell *matCellDef="let registro" [matTooltip]="registro.comentario" matTooltipPosition="above"> {{registro.ranking}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="correo">
+                <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
+                <mat-cell *matCellDef="let registro"> {{registro.correo}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="fechaevento">
+                <mat-header-cell *matHeaderCellDef> Fecha Registro </mat-header-cell>
+                <mat-cell *matCellDef="let registro"> {{registro.fechaevento}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+
+</mat-card>
